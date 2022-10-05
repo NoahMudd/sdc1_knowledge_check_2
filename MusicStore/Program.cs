@@ -1,4 +1,6 @@
 ﻿using MusicStore;
+using MusicStore.Models;
+using MusicStore.Services;
 
 // See https://aka.ms/new-console-template for more information
 /*
@@ -15,19 +17,25 @@
   - Add from inventory
   	- Receive shipments
   - Items
-	  - Instruments
-	  - CDs
-	  - Vinyl
-	  - Tapes
+	  - Instruments - 
+	  - CDs - Artist, AlbumName, Price 
+	  - Vinyl - Artist, AlbumName, Price
+	  - Tapes - Artist, AlbumName, Price
 */
 
-List<CD> cds = new List<CD>();
-cds.Add(new CD() { Title = "Booker's Dream",  Artist = "Justin" });
-cds.Add(new CD() { Title = "Straight Outta The Highlands", Artist = "Brad" });
-cds.Add(new CD() { Title = "Barely Awake", Artist = "Michael" });
+var albumInventorySvc = new AlbumInventoryService();
 
-Console.WriteLine("Welcome to CL music store");
+albumInventorySvc.AddRange(new List<IAlbum>()
+{
+    new CD { Title = "Booker's Dream",  Artist = "Justin" },
+    new CD { Title = "Straight Outta The Highlands", Artist = "Brad" },
+    new CD { Title = "Barely Awake", Artist = "Michael" },
+    new Vinyl { Title = "Strange Daze",  Artist = "The Doors" },
+    new Vinyl { Title = "Best of the Best", Artist = "Frank Sinatra" },
+    new Vinyl { Title = "Kid A", Artist = "Radio Head" }
+});
 
+Console.WriteLine("***Welcome to CL music store***");
 Console.WriteLine("1. List Inventory");
 Console.WriteLine("2. Add to Inventory");
 Console.WriteLine("3. Update existing product");
@@ -36,38 +44,58 @@ Console.WriteLine("5. Sell from Inventory");
 Console.WriteLine("6. Exit");
 
 var key = Console.ReadKey().KeyChar;
-Console.WriteLine("The key you pressed was " + key);
+
+//Write a blank line. 
+Console.WriteLine();
 
 if (key == '1')
 {
     Console.WriteLine("Inventory Contains:");
-    Console.WriteLine(cds.Count);
-    foreach (var cd in cds)
-    {
-        Console.WriteLine(cd.ToString());
-    }
+    albumInventorySvc.ListAlbums();
 }
 else if (key == '2')
 {
-    var newCd = new CD();
+    Console.WriteLine("What type of album would you like to add?");
+    Console.WriteLine("1. CD");
+    Console.WriteLine("2. Vinyl");
+    Console.WriteLine("3. Cassette");
+    var albumToAddInput = Console.ReadLine();
+
+    IAlbum albumToAdd;
+
+    switch (albumToAddInput)
+    {
+        case "1":
+            albumToAdd = new CD();
+            break;
+        case "2":
+            albumToAdd = new Vinyl();
+            break;
+        case "3":
+            albumToAdd = new Cassette();
+            break;
+        default:
+            throw new ArgumentException("USER DID NOT ENTER A VALID ALBUM TYPE TO ADD");
+    }
+
 
     Console.WriteLine("Creating new CD.");
     Console.WriteLine("Title: ");
     var title = Console.ReadLine();
 
-    newCd.Title = title;
+    albumToAdd.Title = title;
 
     Console.WriteLine("Artist: ");
-    newCd.Artist = Console.ReadLine();
+    albumToAdd.Artist = Console.ReadLine();
 
     Console.WriteLine("Genre: ");
-    newCd.Genre = Console.ReadLine();
+    albumToAdd.Genre = Console.ReadLine();
 
     Console.WriteLine("Price: ");
     var price = Console.ReadLine();
     try
     {
-        newCd.Price = decimal.Parse(price);
+        albumToAdd.Price = decimal.Parse(price);
     }
     catch (Exception)
     {
@@ -78,35 +106,36 @@ else if (key == '2')
     var year = Console.ReadLine();
     try
     {
-        newCd.YearOfRelease = int.Parse(year);
+        albumToAdd.YearOfRelease = int.Parse(year);
     }
     catch (Exception)
     {
         Console.WriteLine("Failed to include year - was not a valid integer.");
     }
 
-    Console.WriteLine(newCd.ToString());
+    albumInventorySvc.Add(albumToAdd);
+    Console.WriteLine($"Added {albumToAdd.GetDetails()}");
 }
 else if (key == '3')
 {
     Console.WriteLine("Choose CD to update: ");
 
-    for (int i = 0; i < cds.Count; i++)
-    {
-        var currentCD = cds[i].ToString();
-        Console.WriteLine($"{i + 1}. {currentCD}");
-    }
+    albumInventorySvc.ListAlbums();
 
-    var selectedCDIndex = Console.ReadLine();
+    var selectedIdx = Console.ReadLine();
 
     int index;
 
-    bool success = int.TryParse(selectedCDIndex, out index);
+    bool success = int.TryParse(selectedIdx, out index);
 
     if (success)
     {
-        var selectedCD = cds[index - 1];
+        var selectedCD = albumInventorySvc.SelectAlbumByIndex(index);
+        //Prompt user for updates
+
 
     }
-
 }
+
+
+Console.ReadLine();
