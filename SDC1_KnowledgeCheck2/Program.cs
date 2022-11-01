@@ -44,4 +44,4 @@ namespace SDC1_KnowledgeCheck2
 }
 
 
-//Question for class - Ignore - Star.mass = Int32.TryParse(Console.ReadLine());
+
