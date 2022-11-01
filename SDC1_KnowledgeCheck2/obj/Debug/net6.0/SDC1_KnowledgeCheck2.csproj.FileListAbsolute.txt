@@ -1,0 +1,15 @@
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.csproj.AssemblyReference.cache
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.AssemblyInfoInputs.cache
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.AssemblyInfo.cs
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.csproj.CoreCompileInputs.cache
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\bin\Debug\net6.0\SDC1_KnowledgeCheck2.exe
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\bin\Debug\net6.0\SDC1_KnowledgeCheck2.deps.json
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\bin\Debug\net6.0\SDC1_KnowledgeCheck2.runtimeconfig.json
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\bin\Debug\net6.0\SDC1_KnowledgeCheck2.dll
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\bin\Debug\net6.0\SDC1_KnowledgeCheck2.pdb
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.dll
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\refint\SDC1_KnowledgeCheck2.dll
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.pdb
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\SDC1_KnowledgeCheck2.genruntimeconfig.cache
+C:\Users\Noah\source\repos\SDC1_KnowledgeCheck2\SDC1_KnowledgeCheck2\obj\Debug\net6.0\ref\SDC1_KnowledgeCheck2.dll
